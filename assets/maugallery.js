@@ -65,15 +65,36 @@
         return;
       }
     });
+// Gestionnaire de clic pour les éléments de la galerie
+$(".gallery-item").on("click", function() {
+  if (options.lightBox && $(this).prop("tagName") === "IMG") {
+      $.fn.mauGallery.methods.openLightBox($(this), options.lightboxId);
+  } else {
+      return;
+  }
+});
+
 // Gestionnaires de clic pour la navigation et la filtration par balises
-    $(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
-    $(".gallery").on("click", ".mg-prev", () =>
-      $.fn.mauGallery.methods.prevImage(options.lightboxId)
-    );
-    $(".gallery").on("click", ".mg-next", () =>
-      $.fn.mauGallery.methods.nextImage(options.lightboxId)
-    );
-  };
+$(".gallery").on("click", ".nav-link", $.fn.mauGallery.methods.filterByTag);
+$(".gallery").on("click", ".mg-prev", () =>
+  $.fn.mauGallery.methods.prevImage(options.lightboxId)
+);
+$(".gallery").on("click", ".mg-next", () =>
+  $.fn.mauGallery.methods.nextImage(options.lightboxId)
+);
+
+// Ajoutez des gestionnaires d'événements clavier pour les flèches gauche (37) et droite (39)
+$(document).on("keydown", function(event) {
+  if (event.which === 37) {
+      // Touche de la flèche gauche (précédent)
+      $.fn.mauGallery.methods.prevImage(options.lightboxId);
+  } else if (event.which === 39) {
+      // Touche de la flèche droite (suivant)
+      $.fn.mauGallery.methods.nextImage(options.lightboxId);
+  }
+  });
+};
+
 // Méthodes du plugin
   $.fn.mauGallery.methods = {
     createRowWrapper(element) {

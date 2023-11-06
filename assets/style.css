@@ -8,13 +8,12 @@ body {
 /**************header*************/
 .top-header {
     background-color: white;
-    position: sticky;
     top: 0;
     z-index: 1000;
     display: flex;
     justify-content: space-between;
-    padding: 30px 100px;
     align-items: center;
+    padding: 30px 100px;  
 }
 
 .top-header .name {
@@ -37,17 +36,18 @@ body {
     color: #000;
 }
 
-.social-link img {
-    width: 20px;
+/************caroussel*********/
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    border: 10px solid #5B5629; 
+    background-color: #5B5629;
+    border-radius: 50%; 
+    padding: 10px; 
 }
 
 /***********présentation************/
-
 #about {
 	display: flex;
 	background-color: #F6D2B8;
-	padding-inline: 100px;
-	padding-block: 100px;
 	position: relative;
 }
 
@@ -63,15 +63,15 @@ body {
 }
 
 .picture {
-	flex: 1;
+
 	margin: 0 20px;
 	z-index: 0;
 }
 
 .picture img {
 	width: 100%;
-
 }
+
 #about-me {
 	flex: 2
 }
@@ -93,10 +93,6 @@ body {
 }
 
 /**************gallery***************/
-#gallery {
-    min-height: 100vh;
-}
-
 .title {
     text-align: center;
     padding-block: 2em;
@@ -135,6 +131,10 @@ body {
     height: 100%;
     object-fit: cover;
     padding: .5em;
+}
+/***********modale**********/
+.modal-content {
+padding: 15px;
 }
 
 .mg-prev, .mg-next {
@@ -215,8 +215,10 @@ body {
 #contact .container {
     display: flex;
 }
+
  .picture img {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
+    width: 70%;
  }
 
 .picture.right::before {
@@ -231,7 +233,6 @@ body {
     margin-bottom: 50px;
     column-gap: 50px;
 }
-
 
 
 /***********formulaire**********/
@@ -259,6 +260,9 @@ form input[type="submit"] {
     padding: .5em 1em;
 }
 
+.info-contact {
+    margin-bottom: 0;
+}
 /*********responsive***********/
 @media all and (max-width: 1180px) {
     .picture {
@@ -287,7 +291,7 @@ form input[type="submit"] {
     }
 
     .picture {
-        width: 50%;
+        width: 100%;
     }
 
     .picture.left::before {
@@ -347,9 +351,39 @@ form input[type="submit"] {
     }
 }
 
-@media all and (max-width: 650px) {
+@media all and (max-width: 425px) {
     .top-header {
+        display: flex;
         flex-direction: column;
         padding-inline: 0;
     }
+
+nav {
+    width: 100%;
+
 }
+}
+
+#about {
+    padding: 20px;
+}
+
+#contact {
+    padding: 40px 60px;
+}
+
+form  {
+   width: 100%;
+}
+
+#services .container {
+    display: flex;
+    padding: 2em 2em;
+    }
+
+
+.picture  img {
+    width: 100%;
+}
+
+    
