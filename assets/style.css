@@ -49,6 +49,8 @@ body {
 	display: flex;
 	background-color: #F6D2B8;
 	position: relative;
+    padding-inline: 100px;
+    padding-block: 100px;
 }
 
 .picture.left::before {
@@ -237,7 +239,7 @@ padding: 15px;
 
 /***********formulaire**********/
 .form-container {
-    flex: 2;
+    width: 100%;
 }
 
 form {
@@ -283,6 +285,14 @@ form input[type="submit"] {
     #about-me p {
         width: 100%;
     }
+
+    .form-container {
+        width: 50%;
+    }
+
+    .picture.right img {
+        width: 100%;
+    }
 }
 
 @media all and (max-width: 1000px) {
@@ -290,8 +300,11 @@ form input[type="submit"] {
         flex-direction: column;
     }
 
-    .picture {
-        width: 100%;
+    .picture.left{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
     }
 
     .picture.left::before {
@@ -341,6 +354,16 @@ form input[type="submit"] {
         margin-top: 1em;
     }
 
+    .form-container {
+        width: 100%;
+    }
+
+    .picture.right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
     .picture.right::before {
         width: 100%;
         height: 30%;
@@ -360,9 +383,8 @@ form input[type="submit"] {
 
 nav {
     width: 100%;
+}
 
-}
-}
 
 #about {
     padding: 20px;
@@ -376,6 +398,10 @@ form  {
    width: 100%;
 }
 
+.form-container {
+    width: 100%;
+}
+
 #services .container {
     display: flex;
     padding: 2em 2em;
@@ -386,4 +412,5 @@ form  {
     width: 100%;
 }
 
+}
     
